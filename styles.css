@@ -1,4 +1,65 @@
-/* Fade-in animation */
+/* Typography */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Lora:wght@400;700&display=swap');
+
+body {
+  font-family: 'Lora', serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Global Styling */
+body {
+  background-color: #1f2937; /* Dark background */
+  color: #f3f4f6; /* Light text */
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  background: linear-gradient(to right, #111827, #1f2937); /* Dark gradient */
+}
+
+.hero video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero .content {
+  position: relative;
+  z-index: 10;
+}
+
+.bg-opacity-50 {
+  background-color: rgba(0, 0, 0, 0.5); /* Black overlay with opacity */
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  animation: slideIn 1.2s ease-out;
+}
+
+/* Fade-in effect for sections */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -12,16 +73,66 @@
   }
 }
 
-/* Hover effects for links and buttons */
-a:hover, button:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+/* Button Styles */
+button, .btn {
+  background: linear-gradient(to right, #facc15, #fbbf24); /* Gold gradient */
+  color: #1f2937; /* Dark grey text */
+  padding: 12px 24px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-out;
 }
 
-/* Feature card hover effect */
-.feature-card:hover {
-  background-color: #1f2937; /* Darker background on hover */
-  transform: scale(1.05); /* Slight scale effect */
+/* Hover effect for buttons */
+button:hover, .btn:hover {
+  background: linear-gradient(to right, #fbbf24, #f59e0b); /* Lighter gradient */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-5px);
+}
+
+/* Focus state for accessibility */
+a:focus, button:focus {
+  outline: 2px solid #fbbf24; /* Yellow outline */
+  outline-offset: 4px;
+}
+
+/* Feature Card Hover Effect */
+.feature-card {
+  background-color: #1f2937; /* Dark card background */
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-out, background-color 0.3s ease-out;
 }
+
+.feature-card:hover {
+  background-color: #111827; /* Darker on hover */
+  transform: scale(1.05); /* Slight scale effect */
+}
+
+/* Footer Styling */
+footer {
+  background-color: #1f2937; /* Dark footer background */
+  padding: 48px 0;
+}
+
+footer .border-t {
+  border-top: 1px solid #4b5563; /* Light gray divider */
+}
+
+footer p {
+  color: #9ca3af; /* Lighter text color */
+}
+
+/* Social Media Icons */
+footer a img {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease;
+}
+
+footer a:hover img {
+  filter: brightness(1.5);
+  transform: translateY(-5px);
+}
+
